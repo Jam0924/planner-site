@@ -2,10 +2,22 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows:  1fr 1fr 1fr 1fr 1fr;
   grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
   gap: 10px;
   background-color: blue;
+}
+
+.sidebarContainer{
+  grid-row: 1 /5;
+  grid-column: 1;
+  background-color: purple;
+}
+
+.recordPlayerExtend{
+  grid-row: 2 / 4;
+  grid-column: 6;
+  background-color:pink;
 }
 
 .timeSizer{
@@ -45,6 +57,19 @@
   grid-row: 2/-1;
   grid-column: 1;
   background-color: pink;
+  border-radius: 15px 15px 0 0;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.toDoListItem{
+  width: 100%;
+  height: calc(25% - 10px);
+  border-radius: 15px 15px 15px 15px;
+  background-color: orange;
 }
 
 .timerContainer{
