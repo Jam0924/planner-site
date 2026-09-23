@@ -4,4 +4,7 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    allowedHosts: ['.ngrok-free.app', '.ngrok.app', '.result-stooge-effort.ngrok-free.dev'],
+  },
 })

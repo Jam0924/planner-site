@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import DashboardToDo from './DashboardToDo.jsx'
 
 function App() {
   return (
@@ -25,15 +26,7 @@ function App() {
 
       <div className = "toDoListSizer">
         <div className = "toDoListContainer">
-          <div className = "toDoListItem">
-            <p> To-Do List Container</p>
-          </div>
-          <div className = "toDoListItem">
-            <p> To-Do List Container</p>
-          </div>
-          <div className = "toDoListItem">
-            <p> To-Do List Container</p>
-          </div>
+          <DashboardToDo></DashboardToDo>
         </div>
       </div>
 
