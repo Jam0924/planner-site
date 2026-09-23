@@ -10,9 +10,19 @@ function DashboardToDo(){
                 </div>
 
                 <div className = "toDoListItemTitle">
-
+                    <p className = "toDoListItemTitleText">
+                         Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Task Title Tdldgkfmfdlkbmdklbfmdbkdfmbljdnbjgbnjgbjgfgjbfgnj 
+                    </p>
                 </div>
-                <div className = "toDoListItemDesc">
+                <div className = "toDoListItemTagsContainer">
+                    <div className = "toDoListItemDateTag">
+                        <div className = "dateTag toDoListItemTag"><p>Thurs, June 22</p></div>
+                    </div>
+
+                    <div className = "toDoListItemOtherTag">
+                        <div className = "toDoListItemTag"><p>Studying</p></div>
+                        <div className = "toDoListItemTag"><p>CS350</p></div>
+                    </div>
 
                 </div>
                 <div className = "toDoListItemExpand">
