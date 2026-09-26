@@ -9,29 +9,33 @@ function App() {
         <p>sb</p>
       </div>
 
-      <div className = "timeSizer">
-        <div className = "timeContainer">
-        <p> Time Container</p>
+      <div className = "settingsContainer">
+        <div className = "expandButton"></div>
+        <div className = "settingsContainerRight">
+          <div className = "loginButton"></div>
+          <div className = "settingsButton"></div>
         </div>
       </div>
 
-      <div className = "settingsContainer">
-      <p> settings</p>
+      <div className = "timeContainer">
+        <div className = "timeObject"></div>
+        <div className = "streakObject"></div>
+        <div className = "dateObject"></div>
       </div>
+
+      <div className = "toDoListContainer">
+        <DashboardToDo></DashboardToDo>
+      </div>
+
+      <div className = "timerContainer">
+        <div  className = "timerObject">
+        </div>
+      </div>
+
 
       <div className = "scheduleContainer">
         <p> Schedule Container</p>
 
-      </div>
-
-      <div className = "toDoListSizer">
-        <div className = "toDoListContainer">
-          <DashboardToDo></DashboardToDo>
-        </div>
-      </div>
-
-      <div className = "timerContainer">
-        <p> timer container</p>
       </div>
 
       <div className = "recordPlayerExtend">

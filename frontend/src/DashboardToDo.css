@@ -76,7 +76,6 @@
   align-items: center;
 }
 
-
 .toDoListItemTag{
   background-color: orange;
   height: 80%;
@@ -103,10 +102,40 @@
   align-items: center;
 }
 
-
 .toDoListCategoryBlocker{
   width: 100%;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
   flex-shrink: 0;
-  height: calc(15% - 10px);
+  height: calc(10% - 10px);
   background-color: lavender;
+}
+
+.toDoListCategoryBlockerDivider{
+  grid-row: 2;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: white;
+  margin: 2px;
+}
+
+.toDoListCategoryBlockerTitle{
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  grid-row: 1;
+  background-color: navajowhite;
+  font-size: 1.2rem;
+}
+
+.toDoListCategoryBlockerDividerStyler{
+  width: 100%;
+  flex-shrink: 0;
+  height: 2px;
+  border: none;
+  background-color: red;
+  border-radius: 3px;
 }
