@@ -137,3 +137,44 @@
   padding: 0px var(--xSmallGap)
 }
 
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine){
+  .websiteContainer{
+    background-color: white;
+  }
+}
+
+@media (min-width: 1024px) and (hover: none){
+  .websiteContainer{
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "time time . settings"
+    ". . . ."
+    "schedule todo todo timer";
+    gap: 0;
+  }
+
+  .settingsContainer{
+    grid-area: settings;
+  }
+
+  .timeContainer{
+    grid-area: time;
+  }
+
+  .toDoListContainer{
+    grid-area: todo;
+  }
+
+  .scheduleContainer{
+    grid-area: schedule;
+    height: 33vh;
+  }
+
+  .timerContainer{
+    grid-area: timer;
+  }
+}
