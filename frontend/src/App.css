@@ -1,7 +1,10 @@
 :root{
+  --textPaddingGap: 4px;
   --xSmallGap: 8px;
   --smallGap: 16px;
   --mediumGap: 32px;
+  --xxSmallIcon: 24px;
+  --xSmallIcon: 32px;
   --smallIcon: 48px;
   --mediumIcon: 72px;
   --largeIcon: 96px;
@@ -80,12 +83,13 @@
   max-height: 30vh;
   flex-direction: column;
   gap: var(--xSmallGap);
-  padding: 0px var(--smallGap);
+  padding: var(--smallGap);
   overflow-y: scroll;
 }
 
 .timerContainer{
   padding: 0px var(--xSmallGap);
+  background-color: cyan;
   /* potentially may need more to go in the container  */
 }
 
@@ -103,10 +107,8 @@
 
 
 .scheduleContainer{
-  background-color: green;
-}
-
-.timerContainer{
-  background-color:cyan;
+  background-color: lightgreen;
+  height: 60vh;
+  padding: 0px var(--xSmallGap)
 }
 

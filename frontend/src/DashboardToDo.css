@@ -1,106 +1,88 @@
 .toDoListItem{
   width: 100%;
-  flex-shrink: 0;
-  height: calc(25% - 10px);
-  border-radius: 15px 15px 15px 15px;
-  background-color: orange;
   display: grid;
-  grid-template-columns: 0.1fr 1fr 0.1fr;
-  grid-template-rows: 6fr 4fr;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "check title title"
+  "tags tags tags";
+  background-color: orange;
 }
 
 .toDoListItemCheck{
   background-color: #a52a2a;
-  width: 50%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  place-self: center;
-  display: flex;
-  position: relative;
+  height: var(--xSmallIcon);
+  width: 100%;
+  align-self: center;
+  justify-content: center;
   display: grid;
-  align-items: center;
+  grid-area: check;
 }
 
-.toDoListItemCheckInner{
-  background-color: coral;
-  width: 100%;
-  aspect-ratio: 1/1;
+.toDoListItemCheckIconHitbox{
+  background-color: darkgoldenrod;
+  height: 100%;
+  width: var(--xSmallIcon);
   border-radius: 50%;
-  transform: scale(0.85);
+  justify-content: center;
+  display :grid;
+}
+
+.toDoListItemCheckIcon{
+  background-color: black;
+  height: 100%;
+  width: var(--xxSmallIcon);
+  border-radius: 50%;
+  place-self: center;
 }
 
 .toDoListItemTitle{
   background-color: yellow;
-  width: 100%;
-  grid-column: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  padding: 0px var(--xSmallGap);
+  place-self: center;
+  height: 100%;
+  width: calc(100% - 2 * var(--xSmallGap));
+  display: grid;
+  grid-area: title;
+  align-content: center;
 }
 
 .toDoListItemTitleText{
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Set the exact number of lines you want to show */
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
-.toDoListItemTagsContainer{
+.toDoListItemTagContainer{
   background-color: purple;
-  width: 100%;
-  grid-column: 2;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: 3fr 7fr;
-}
-
-.toDoListItemDateTag{
-  background-color: grey;
-  width: 100%;
-  height: 100%;
-  grid-column: 1;
+  width: calc(100% - 2*var(--xSmallGap));
   display: flex;
-  flex-direction: row;
-  align-items:center;
-  padding: 0px 5px;
+  justify-content: space-between;
+  grid-area: tags;
+  padding: var(--xSmallGap);
 }
 
-.toDoListItemOtherTag{
-  background-color: darkblue;
-  width: 100%;
-  height: 100%;
-  grid-column: 2;
+.rightTagBundle{
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  gap: var(--xSmallGap);
 }
-
 .toDoListItemTag{
   background-color: orange;
-  height: 80%;
-  padding: 0 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  margin: 0 10px;
+  height: 100%;
 }
 
-.dateTag{
-  margin: 0 10px 0 0;
-}
 
 .toDoListItemExpand{
   background-color: red;
-  width: 100%;
-  height: 100%;
-  grid-column: 3;
-  grid-row: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-area: expand;
 }
+
+
+
+
+
+
 
 .toDoListCategoryBlocker{
   width: 100%;
