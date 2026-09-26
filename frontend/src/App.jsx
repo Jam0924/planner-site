@@ -30,6 +30,9 @@ function App() {
       <div className = "timerContainer">
         <div  className = "timerObject">
         </div>
+        <div className = "timerConfig">
+
+        </div>
       </div>
 
 
