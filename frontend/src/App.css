@@ -104,7 +104,7 @@
 
 .timerContainer{
   padding: 0px var(--xSmallGap);
-  background-color: cyan;
+  /* background-color: cyan; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "timer timerConfig"
@@ -137,28 +137,31 @@
   padding: 0px var(--xSmallGap)
 }
 
-
-@media (min-width: 1024px) and (hover: hover) and (pointer: fine){
+@media (min-width: 1024px){
   .websiteContainer{
-    background-color: white;
-  }
-}
-
-@media (min-width: 1024px) and (hover: none){
-  .websiteContainer{
+    height: calc(100vh - 2* var(--xSmallGap));
+    width: calc(100vw - 2 * var(--xSmallGap));
     background-color: grey;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 25vh;
+    padding: var(--xSmallGap);
     grid-template-areas: 
-    "time time . settings"
-    ". . . ."
-    "schedule todo todo timer";
-    gap: 0;
+    ". time time . settings"
+    ". schedule todo todo timer";
   }
 
   .settingsContainer{
+    background-color: transparent;
+    position: static;
     grid-area: settings;
+    align-items: flex-start;
+    justify-content: right;
+  }
+
+  .expandButton{
+    display: none;
   }
 
   .timeContainer{
@@ -167,14 +170,31 @@
 
   .toDoListContainer{
     grid-area: todo;
+    max-height: none;
   }
 
   .scheduleContainer{
     grid-area: schedule;
-    height: 33vh;
+    height: auto;
   }
 
   .timerContainer{
     grid-area: timer;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--xSmallGap);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "timer" "timerConfig";
+  }
+
+  .timerObject{
+    justify-self: center;
   }
 }
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine){
+  .websiteContainer{
+    background-color: grey;
+  }
+}
+
