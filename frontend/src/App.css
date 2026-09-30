@@ -144,11 +144,11 @@
     background-color: grey;
     display: grid;
     grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
-    row-gap: 25vh;
+    grid-template-rows: auto auto auto;
     padding: var(--xSmallGap);
     grid-template-areas: 
     ". time time . settings"
+    ". . . . timer"
     ". schedule todo todo timer";
   }
 
@@ -182,7 +182,7 @@
     grid-area: timer;
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--xSmallGap);
+    gap: var(--mediumGap);
     grid-template-rows: auto 1fr;
     grid-template-areas: "timer" "timerConfig";
   }
