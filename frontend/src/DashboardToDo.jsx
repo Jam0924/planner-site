@@ -3,150 +3,51 @@ import { useState, useEffect } from 'react'
 
 
 function DashboardToDo(){
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        fetch("api/task_data")
+        .then((response) => response.json())
+        .then((data) => {
+            setTasks(data.tasks);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }, []);
+
     return(
         <>
+        {tasks.map((task) => (
+            <>
+            <div className = "toDoListItem">
+                <div className = "toDoListItemCheck">
+                    <div className = "toDoListItemCheckIconHitbox">
+                        <div className = "toDoListItemCheckIcon"></div>
+                    </div>
+                </div>
+                <div>
+                    <p className="toDoListItemTitleText">{task.title}</p>
+                </div>
+                <div className = "toDoListItemTagContainer">
+                    <div className = "toDoListItemTag">
+                        <p className = "toDoListItemTagText">{task.date_due}</p>
+                    </div>
+                    <div className = "toDoListItemRightTagBundle">
+                        {task.tags.map((tag) => (
+                            <div className = "toDoListItemTag">
+                                <p className = "toDoListItemTagText">{tag}</p>
+                            </div>
+                        ))}
+                        <div className = "toDoListItemTag toDoListItemExpand">
+                            <p className = "toDoListItemTagText">Expand</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </>
+        ))}
 
-        <div className = "toDoListCategoryLabel">
-            <p className = "toDoListCategoryLabelText">CATEGORY</p>
-            <hr className = "toDoListCategoryLabelDivider"/>
-        </div>
 
-        <div className = "toDoListItem">
-            <div className = "toDoListItemCheck">
-                <div className = "toDoListItemCheckIconHitbox">
-                    <div className = "toDoListItemCheckIcon"></div>
-                </div>
-            </div>
-            <div className="toDoListItemTitle">
-                <p className = "toDoListItemTitleText">title title title title title title title title title title title</p></div>
-            <div className="toDoListItemTagContainer">
-                <div className = "toDoListItemTag">
-                    <p className = "toDoListItemTagText">Saturday, September 26</p>
-                </div>
-                <div className = "toDoListItemRightTagBundle">
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">studying</p>
-                    </div>
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">class</p>
-                    </div>
-                    <div className = "toDoListItemExpand toDoListItemTag">
-                        <p className = "toDoListItemTagText">Expand</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className = "toDoListItem">
-            <div className = "toDoListItemCheck">
-                <div className = "toDoListItemCheckIconHitbox">
-                    <div className = "toDoListItemCheckIcon"></div>
-                </div>
-            </div>
-            <div className="toDoListItemTitle">
-                <p className = "toDoListItemTitleText">title title title title title title title title title title title</p></div>
-            <div className="toDoListItemTagContainer">
-                <div className = "toDoListItemTag">
-                    <p className = "toDoListItemTagText">Saturday, September 26</p>
-                </div>
-                <div className = "toDoListItemRightTagBundle">
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">studying</p>
-                    </div>
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">class</p>
-                    </div>
-                    <div className = "toDoListItemExpand toDoListItemTag">
-                        <p className = "toDoListItemTagText">Expand</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div className = "toDoListCategoryLabel">
-            <p className = "toDoListCategoryLabelText">CATEGORY</p>
-            <hr className = "toDoListCategoryLabelDivider"/>
-        </div>
-
-        <div className = "toDoListItem">
-            <div className = "toDoListItemCheck">
-                <div className = "toDoListItemCheckIconHitbox">
-                    <div className = "toDoListItemCheckIcon"></div>
-                </div>
-            </div>
-            <div className="toDoListItemTitle">
-                <p className = "toDoListItemTitleText">title title title title title title title title title title title</p></div>
-            <div className="toDoListItemTagContainer">
-                <div className = "toDoListItemTag">
-                    <p className = "toDoListItemTagText">Saturday, September 26</p>
-                </div>
-                <div className = "toDoListItemRightTagBundle">
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">studying</p>
-                    </div>
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">class</p>
-                    </div>
-                    <div className = "toDoListItemExpand toDoListItemTag">
-                        <p className = "toDoListItemTagText">Expand</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className = "toDoListItem">
-            <div className = "toDoListItemCheck">
-                <div className = "toDoListItemCheckIconHitbox">
-                    <div className = "toDoListItemCheckIcon"></div>
-                </div>
-            </div>
-            <div className="toDoListItemTitle">
-                <p className = "toDoListItemTitleText">title title title title title title title title title title title</p></div>
-            <div className="toDoListItemTagContainer">
-                <div className = "toDoListItemTag">
-                    <p className = "toDoListItemTagText">Saturday, September 26</p>
-                </div>
-                <div className = "toDoListItemRightTagBundle">
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">studying</p>
-                    </div>
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">class</p>
-                    </div>
-                    <div className = "toDoListItemExpand toDoListItemTag">
-                        <p className = "toDoListItemTagText">Expand</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div className = "toDoListItem">
-            <div className = "toDoListItemCheck">
-                <div className = "toDoListItemCheckIconHitbox">
-                    <div className = "toDoListItemCheckIcon"></div>
-                </div>
-            </div>
-            <div className="toDoListItemTitle">
-                <p className = "toDoListItemTitleText">title title title title title title title title title title title</p></div>
-            <div className="toDoListItemTagContainer">
-                <div className = "toDoListItemTag">
-                    <p className = "toDoListItemTagText">Saturday, September 26</p>
-                </div>
-                <div className = "toDoListItemRightTagBundle">
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">studying</p>
-                    </div>
-                    <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">class</p>
-                    </div>
-                    <div className = "toDoListItemExpand toDoListItemTag">
-                        <p className = "toDoListItemTagText">Expand</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-          </>
+        </>
     )
 }
 
