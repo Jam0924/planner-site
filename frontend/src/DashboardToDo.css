@@ -7,7 +7,7 @@
   "check title title"
   ". tags tags";
   border: var(--mediumBorderSize) solid black;
-  border-radius: 8px;
+  border-radius: var(--regularRoundedCornerSize);
   padding: var(--smallTextPaddingGap) 0;
   /* background-color: orange; */
 }

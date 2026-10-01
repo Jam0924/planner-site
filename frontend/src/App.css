@@ -7,6 +7,8 @@
   --smallBorderSize: 1px;
   --mediumBorderSize: 2px;
 
+  --regularRoundedCornerSize: 8px;
+
   --smallTextPaddingGap: 2px;
   --textPaddingGap: 4px;
 
@@ -138,7 +140,7 @@
   padding: 0px var(--xSmallGap)
 }
 
-@media (min-width: 1024px){
+@media (min-width: 800px){
   .websiteContainer{
     height: calc(100vh - 2* var(--xSmallGap));
     width: calc(100vw - 2 * var(--xSmallGap));
@@ -176,11 +178,13 @@
   .toDoListContainer{
     grid-area: todo;
     max-height: none;
+    border-radius: var(--regularRoundedCornerSize)
   }
 
   .scheduleContainer{
     grid-area: schedule;
     height: auto;
+    border-radius: var(--regularRoundedCornerSize)
   }
 
   .timerContainer{
@@ -194,6 +198,10 @@
 
   .timerObject{
     justify-self: center;
+  }
+
+  .timerConfig{
+    border-radius: var(--regularRoundedCornerSize)
   }
 }
 
