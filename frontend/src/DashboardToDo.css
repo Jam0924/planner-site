@@ -51,6 +51,8 @@
 }
 
 .toDoListItemTitleText{
+  padding: var(--xSmallGap);
+  /* background-color :yellow; */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -59,12 +61,25 @@
 }
 
 .toDoListItemTagContainer{
-  /* background-color: purple; */
   width: calc(100% - 2*var(--xSmallGap));
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  column-gap: var(--xSmallGap);
   grid-area: tags;
   padding: var(--xSmallGap);
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.toDoListItemTagContainer::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .toDoListItemRightTagBundle{
@@ -73,6 +88,8 @@
 }
 
 .toDoListItemTagText{
+  margin:0;
+  padding:0;
   font-size: var(--smallTextSize);
 }
 
@@ -80,6 +97,9 @@
   background-color: orange;
   height: 100%;
   padding: var(--smallTextPaddingGap) var(--textPaddingGap);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

@@ -3,17 +3,6 @@ import './App.css'
 import DashboardToDo from './DashboardToDo.jsx'
 
 function App() {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    fetch("api/task_data")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data.message);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
   return (
     <div className = "websiteContainer">
       <div className = "sidebarContainer">
@@ -29,7 +18,7 @@ function App() {
       </div>
 
       <div className = "timeContainer">
-        <div className = "timeObject">{data}</div>
+        <div className = "timeObject"></div>
         <div className = "streakObject"></div>
         <div className = "dateObject"></div>
       </div>

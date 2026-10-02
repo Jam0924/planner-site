@@ -29,7 +29,7 @@ function DashboardToDo(){
                 </div>
                 <div className = "toDoListItemTagContainer">
                     <div className = "toDoListItemTag">
-                        <p className = "toDoListItemTagText">{task.date_due}</p>
+                        <p className = "toDoListItemTagText">{Date(task.date_due)}</p>
                     </div>
                     <div className = "toDoListItemRightTagBundle">
                         {task.tags.map((tag) => (
